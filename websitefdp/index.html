@@ -1,0 +1,84 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  base: './',
+  plugins: [react()],
+})
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FenceDeckPro</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    header, section, footer { margin-bottom: 2rem; }
+    .card { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    .text-center { text-align: center; }
+    .grid { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .grid > div { flex: 1 1 calc(33.333% - 1rem); box-sizing: border-box; }
+    form input, form select, form textarea { display: block; width: 100%; margin-bottom: 1rem; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 0.75rem 1.5rem; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header class="text-center">
+    <h1>FenceDeckPro</h1>
+    <p>Fencing, Decking & Retaining Walls – Built Tough for NZ</p>
+    <button>Get a Free Quote</button>
+  </header>
+
+  <section class="grid">
+    <div class="card">
+      <img src="images/fence1.jpg" alt="Wooden Fence" style="width:100%; border-radius:8px;" />
+      <h2>Fencing</h2>
+      <p>From timber to colorsteel, we install fences that stand the test of time and the Kiwi weather.</p>
+    </div>
+    <div class="card">
+      <img src="images/deck1.jpg" alt="Timber Decking" style="width:100%; border-radius:8px;" />
+      <h2>Decking</h2>
+      <p>Upgrade your outdoor space with custom timber and composite decking solutions.</p>
+    </div>
+    <div class="card">
+      <img src="images/retaining1.jpg" alt="Retaining Wall" style="width:100%; border-radius:8px;" />
+      <h2>Retaining Walls</h2>
+      <p>Functional and stylish retaining walls that keep your landscape in shape.</p>
+    </div>
+  </section>
+
+  <section class="text-center">
+    <h2>Why Choose FenceDeckPro?</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li>Licensed and Insured</li>
+      <li>Locally Owned & Operated</li>
+      <li>Fast, Reliable Service</li>
+      <li>Workmanship Guarantee</li>
+      <li>Silver Medal – Ellerslie Garden Show</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-center">Request a Free Quote</h2>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" />
+      <select name="service" required>
+        <option value="">Select a Service</option>
+        <option value="Fencing">Fencing</option>
+        <option value="Decking">Decking</option>
+        <option value="Retaining Walls">Retaining Walls</option>
+      </select>
+      <textarea name="message" placeholder="Tell us about your project" rows="4"></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+  </section>
+
+  <footer class="text-center">
+    <p>&copy; 2025 FenceDeckPro. All rights reserved.</p>
+  </footer>
+</body>
+</html>
